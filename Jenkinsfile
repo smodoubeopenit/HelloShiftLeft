@@ -2,6 +2,7 @@ pipeline {
   agent none
     stages {
       stage('Build') {
+            agent any
             steps {
                 sh 'make' 
                 archiveArtifacts artifacts: '**/target/hello-shiftleft-0.0.1.jar', fingerprint: true 
