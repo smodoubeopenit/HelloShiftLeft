@@ -4,7 +4,7 @@ pipeline {
       stage('Build') {
             agent any
             steps {
-                sh 'make' 
+                sh 'mvn clean package' 
                 archiveArtifacts artifacts: '**/target/hello-shiftleft-0.0.1.jar', fingerprint: true 
             }
         }
